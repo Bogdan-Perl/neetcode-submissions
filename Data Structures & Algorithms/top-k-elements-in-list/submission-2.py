@@ -1,0 +1,9 @@
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        count = collections.Counter(nums)
+        res = []
+        ordered = sorted(count.items(), key = lambda x : -x[1])
+        for i in range(k):
+            res.append(ordered[i][0])
+
+        return res
